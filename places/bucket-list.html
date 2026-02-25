@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bucket List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Radley&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f7f7f7;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        header {
+            background: #9c1d1c;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Radley', serif;
+            color: white;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+        }
+
+        .back-link:hover {
+            color: #667eea;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .bucket-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .bucket-container h2 {
+            color: #9c1d1c;
+            font-family: 'Radley', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 4px solid #dc2626;
+            padding-bottom: 1rem;
+        }
+
+        .bucket-intro {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: #555;
+            text-align: center;
+            font-style: italic;
+            background: #eef2ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #6366f1;
+        }
+
+        .bucket-category {
+            margin: 3rem 0;
+        }
+
+        .bucket-category h3 {
+            color: #dc2626;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #dc2626;
+            padding-bottom: 0.5rem;
+        }
+
+        .bucket-category h3::before {
+            margin-right: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .bucket-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .bucket-list li {
+            background: #eef2ff;
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #dc2626;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .bucket-list li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .bucket-list li::before {
+            content: "☐";
+            position: absolute;
+            left: -25px;
+            font-size: 1.5rem;
+            color: #dc2626;
+        }
+
+        .bucket-item-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 0.5rem;
+        }
+
+        .bucket-item-description {
+            font-size: 1rem;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .completed {
+            background: #eef2ff;
+            border-left-color: #28a745;
+        }
+
+        .completed::before {
+            content: "☑";
+            color: #28a745;
+        }
+
+        footer {
+            background: #556269;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Life Bucket List</h1>
+        <a href="index.html" class="back-link">← Back to Dream Places</a>
+    </header>
+
+    <div class="bucket-container">
+        <h2>Experiences & Achievements I Want to Accomplish</h2>
+        
+        <p class="bucket-intro">
+            Life is a collection of moments and experiences. This is my bucket list—a roadmap of dreams, 
+            adventures, and milestones I aspire to achieve during my lifetime. Each item represents a goal 
+            that will help me grow, explore, and live life to the fullest.
+        </p>
+
+        <!-- Travel & Adventure -->
+        <div class="bucket-category">
+            <h3>Travel & Adventure</h3>
+            <ul class="bucket-list">
+                <li>
+                    <div class="bucket-item-title">Visit All Seven Continents</div>
+                    <div class="bucket-item-description">
+                        Experience the unique beauty and culture of every continent on Earth, from Antarctica's 
+                        icy wilderness to Africa's vast savannas.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">See the Northern Lights (Aurora Borealis)</div>
+                    <div class="bucket-item-description">
+                        Witness the magical dancing lights in the Arctic sky, preferably in Iceland or Norway.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Go on a Safari in Africa</div>
+                    <div class="bucket-item-description">
+                        See lions, elephants, and giraffes in their natural habitat in Kenya or Tanzania.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Dive the Great Barrier Reef</div>
+                    <div class="bucket-item-description">
+                        Explore the world's largest coral reef system and swim among vibrant marine life.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Hike the Inca Trail to Machu Picchu</div>
+                    <div class="bucket-item-description">
+                        Trek through the Peruvian Andes and reach the ancient Incan citadel at sunrise.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Personal Growth -->
+        <div class="bucket-category">
+            <h3>Personal Growth & Skills</h3>
+            <ul class="bucket-list">
+                <li>
+                    <div class="bucket-item-title">Learn to Speak Three Languages Fluently</div>
+                    <div class="bucket-item-description">
+                        Master at least three languages beyond my native tongue to connect with more cultures.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Write and Publish a Book</div>
+                    <div class="bucket-item-description">
+                        Share my stories, knowledge, or creativity with the world through a published book.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Learn to Play a Musical Instrument</div>
+                    <div class="bucket-item-description">
+                        Master the guitar or piano and perform a song in front of an audience.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Complete a Master's or PhD Degree</div>
+                    <div class="bucket-item-description">
+                        Pursue higher education in a field I'm passionate about and become an expert.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Take a Solo Travel Trip</div>
+                    <div class="bucket-item-description">
+                        Travel alone to a foreign country to discover independence and self-reliance.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Career & Achievement -->
+        <div class="bucket-category">
+            <h3>Career & Professional Goals</h3>
+            <ul class="bucket-list">
+                <li>
+                    <div class="bucket-item-title">Start My Own Business</div>
+                    <div class="bucket-item-description">
+                        Build a successful company that provides value and creates opportunities for others.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Give a TED Talk</div>
+                    <div class="bucket-item-description">
+                        Share an inspiring idea or experience with thousands of people on the TED stage.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Mentor Young Professionals</div>
+                    <div class="bucket-item-description">
+                        Guide and inspire the next generation in their career journeys.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Work Remotely from Different Countries</div>
+                    <div class="bucket-item-description">
+                        Experience the digital nomad lifestyle and work from beautiful locations worldwide.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Health & Fitness -->
+        <div class="bucket-category">
+            <h3>Health & Fitness</h3>
+            <ul class="bucket-list">
+                <li>
+                    <div class="bucket-item-title">Run a Full Marathon</div>
+                    <div class="bucket-item-description">
+                        Complete a 42.195 km marathon race and cross that finish line.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Learn Scuba Diving and Get Certified</div>
+                    <div class="bucket-item-description">
+                        Explore the underwater world and discover marine life up close.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Try Skydiving</div>
+                    <div class="bucket-item-description">
+                        Experience the ultimate adrenaline rush by jumping out of a plane.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Practice Yoga and Meditation Regularly</div>
+                    <div class="bucket-item-description">
+                        Develop a consistent practice for mental clarity and physical wellness.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Giving Back -->
+        <div class="bucket-category">
+            <h3>Giving Back & Making a Difference</h3>
+            <ul class="bucket-list">
+                <li>
+                    <div class="bucket-item-title">Volunteer for a Meaningful Cause</div>
+                    <div class="bucket-item-description">
+                        Dedicate time to help communities in need, whether locally or internationally.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Donate to Build a School or Library</div>
+                    <div class="bucket-item-description">
+                        Contribute to education by funding the construction of a learning facility.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Plant 1,000 Trees</div>
+                    <div class="bucket-item-description">
+                        Contribute to environmental conservation by planting trees for future generations.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Organize a Charity Event</div>
+                    <div class="bucket-item-description">
+                        Create and host an event that raises funds for an important cause.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Unique Experiences -->
+        <div class="bucket-category">
+            <h3>Unique Experiences</h3>
+            <ul class="bucket-list">
+                <li>
+                    <div class="bucket-item-title">Attend a Major Music Festival</div>
+                    <div class="bucket-item-description">
+                        Experience the energy of festivals like Coachella, Tomorrowland, or Glastonbury.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Sleep Under the Stars in a Desert</div>
+                    <div class="bucket-item-description">
+                        Camp in the Sahara or another desert and stargaze in complete darkness.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Ride a Hot Air Balloon</div>
+                    <div class="bucket-item-description">
+                        Float peacefully above stunning landscapes like Cappadocia, Turkey.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Attend the Olympics</div>
+                    <div class="bucket-item-description">
+                        Witness world-class athletes compete at the Olympic Games in person.
+                    </div>
+                </li>
+                <li>
+                    <div class="bucket-item-title">Take a Train Journey Across a Continent</div>
+                    <div class="bucket-item-description">
+                        Experience epic train routes like the Trans-Siberian Railway or Amtrak across America.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
